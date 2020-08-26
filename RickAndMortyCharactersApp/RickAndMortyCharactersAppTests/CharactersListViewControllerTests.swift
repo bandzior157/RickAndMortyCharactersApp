@@ -17,10 +17,20 @@ class CharactersListViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.title, "t")
     }
     
-    private func makeSUT(_ viewModel: CharactersListViewViewModel) -> CharactersListViewController {
+    func test_backgroundColor_didSetAsSystemBackground() {
+        XCTAssertEqual(makeSUT().view.backgroundColor, .systemBackground)
+    }
+    
+    private func makeSUT(_ viewModel: CharactersListViewViewModel = CharactersListViewViewModel.dummy) -> CharactersListViewController {
         let sut = CharactersListViewController(viewModel: viewModel)
         sut.loadViewIfNeeded()
         return sut
     }
     
+}
+
+extension CharactersListViewViewModel {
+    static var dummy: CharactersListViewViewModel {
+        CharactersListViewViewModel(title: "a")
+    }
 }
