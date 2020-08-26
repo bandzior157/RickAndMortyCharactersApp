@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = ViewController()
+        window?.rootViewController = rootViewController()
         window?.makeKeyAndVisible()
     }
 
@@ -54,3 +54,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 }
 
+extension SceneDelegate {
+    
+    func rootViewController() -> UIViewController {
+        let viewModel = CharactersListViewViewModel(title: "Characters")
+        return CharactersListViewController(viewModel: viewModel)
+    }
+}
