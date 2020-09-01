@@ -9,18 +9,17 @@
 class CharactersListViewViewModel {
     
     let title: String
-    let cellViewModels: [CellViewModel]
+    private(set) var cellViewModels = [CellViewModel]()
     let service: CharactersService
     
-    init(title: String, cellViewModels: [CellViewModel] = [], service: CharactersService) {
+    init(title: String, service: CharactersService) {
         self.title = title
-        self.cellViewModels = cellViewModels
         self.service = service
     }
     
     func fetchCharacters() {
-        service.fetch { newCharacters in
-            
+        service.fetch { [weak self] newCharacters in
+            self?.cellViewModels = newCharacters.map { CellViewModel(text: $0.name) }
         }
     }
     

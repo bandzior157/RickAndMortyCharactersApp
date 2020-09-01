@@ -33,23 +33,25 @@ class CharactersListViewControllerTests: XCTestCase {
     }
     
     func test_tableViewRowsCount_equalsViewModelCellViewModelsCount() {
-        let viewModel = makeViewModel("", [CellViewModel(text: "a"), CellViewModel(text: "b")])
+        let viewModel = makeViewModel("")
         let sut = makeSUT(viewModel)
         let rows = sut.tableView.numberOfRows(inSection: 0)
         XCTAssertEqual(rows, viewModel.cellViewModels.count)
     }
     
     func test_cellDisplayTextFromCellViewModel() {
-        let viewModel = makeViewModel("", [CellViewModel(text: "a"), CellViewModel(text: "b")])
+        let characters = [RMCharacter(name: "B"), RMCharacter(name: "A")]
+        let service = FakeCharactersService(characters: characters)
+        let viewModel = makeViewModel("", service)
         let sut = makeSUT(viewModel)
         
         let cell = sut.tableView(sut.tableView, cellForRowAt: IndexPath(row: 0, section: 0))
         XCTAssertNotNil(cell)
-        XCTAssertEqual(cell.textLabel?.text, "a")
+        XCTAssertEqual(cell.textLabel?.text, "B")
         
         let cell2 = sut.tableView(sut.tableView, cellForRowAt: IndexPath(row: 1, section: 0))
         XCTAssertNotNil(cell2)
-        XCTAssertEqual(cell2.textLabel?.text, "b")
+        XCTAssertEqual(cell2.textLabel?.text, "A")
     }
     
     
@@ -59,8 +61,8 @@ class CharactersListViewControllerTests: XCTestCase {
         return CharactersListViewController(viewModel: viewModel)
     }
     
-    private func makeViewModel(_ title: String, _ cellViewModels: [CellViewModel] = [], _ service: CharactersService = CharactersServiceDummy()) -> CharactersListViewViewModel {
-        CharactersListViewViewModel(title: title, cellViewModels: cellViewModels, service: service)
+    private func makeViewModel(_ title: String, _ service: CharactersService = CharactersServiceDummy()) -> CharactersListViewViewModel {
+        CharactersListViewViewModel(title: title, service: service)
     }
     
 }

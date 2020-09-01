@@ -7,9 +7,9 @@
 //
 
 protocol CharactersService {
-    func fetch(completion: @escaping ([Character]) -> ())
+    func fetch(completion: @escaping ([RMCharacter]) -> ())
 }
 
 class CharactersServiceDummy: CharactersService {
-    func fetch(completion: @escaping ([Character]) -> ()) {}
+    func fetch(completion: @escaping ([RMCharacter]) -> ()) {}
 }

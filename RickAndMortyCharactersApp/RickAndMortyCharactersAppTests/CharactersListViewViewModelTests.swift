@@ -21,23 +21,21 @@ class CharactersListViewViewModelTests: XCTestCase {
         XCTAssertEqual(service.fetchCount, 1)
     }
     
+    func test_fetchedCharacters_areParsedToCellViewModels() {
+        let characters = [RMCharacter(name: "A")]
+        let service = FakeCharactersService(characters: characters)
+        let sut = makeSUT(service: service)
+        
+        sut.fetchCharacters()
+        XCTAssertEqual(sut.cellViewModels, [CellViewModel(text: "A")])
+    }
+    
     
     // MARK: - Helpers
     
     private func makeSUT(service: CharactersService) -> CharactersListViewViewModel {
         let title = ""
-        let cellViewModels = [CellViewModel(text: nil)]
-        return CharactersListViewViewModel(title: title, cellViewModels: cellViewModels, service: service)
-    }
-    
-}
-
-class CharactersServiceMock: CharactersService {
-    
-    private(set) var fetchCount = 0
-    
-    func fetch(completion: @escaping ([Character]) -> ()) {
-        fetchCount += 1
+        return CharactersListViewViewModel(title: title, service: service)
     }
     
 }

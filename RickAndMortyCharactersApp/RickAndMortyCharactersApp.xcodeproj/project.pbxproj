@@ -11,6 +11,10 @@
 		5A260E8724FEBD7900EA1BC8 /* UITableViewCell+SetByCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A260E8624FEBD7900EA1BC8 /* UITableViewCell+SetByCellViewModel.swift */; };
 		5A260E8924FEE8FA00EA1BC8 /* CharactersListViewViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A260E8824FEE8FA00EA1BC8 /* CharactersListViewViewModelTests.swift */; };
 		5A260E8B24FEED0D00EA1BC8 /* CharactersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A260E8A24FEED0D00EA1BC8 /* CharactersService.swift */; };
+		5A260E8D24FEF0EA00EA1BC8 /* RMCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A260E8C24FEF0EA00EA1BC8 /* RMCharacter.swift */; };
+		5A260E9024FEF2F700EA1BC8 /* CellViewModel+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A260E8F24FEF2F700EA1BC8 /* CellViewModel+Equatable.swift */; };
+		5A260E9224FEF32300EA1BC8 /* FakeCharactersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A260E9124FEF32300EA1BC8 /* FakeCharactersService.swift */; };
+		5A260E9424FEF34500EA1BC8 /* CharactersServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A260E9324FEF34500EA1BC8 /* CharactersServiceMock.swift */; };
 		5A4CE20B24F6E39100B5045B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CE20A24F6E39100B5045B /* AppDelegate.swift */; };
 		5A4CE20D24F6E39100B5045B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CE20C24F6E39100B5045B /* SceneDelegate.swift */; };
 		5A4CE21424F6E39500B5045B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A4CE21324F6E39500B5045B /* Assets.xcassets */; };
@@ -35,6 +39,10 @@
 		5A260E8624FEBD7900EA1BC8 /* UITableViewCell+SetByCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+SetByCellViewModel.swift"; sourceTree = "<group>"; };
 		5A260E8824FEE8FA00EA1BC8 /* CharactersListViewViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListViewViewModelTests.swift; sourceTree = "<group>"; };
 		5A260E8A24FEED0D00EA1BC8 /* CharactersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersService.swift; sourceTree = "<group>"; };
+		5A260E8C24FEF0EA00EA1BC8 /* RMCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacter.swift; sourceTree = "<group>"; };
+		5A260E8F24FEF2F700EA1BC8 /* CellViewModel+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CellViewModel+Equatable.swift"; sourceTree = "<group>"; };
+		5A260E9124FEF32300EA1BC8 /* FakeCharactersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeCharactersService.swift; sourceTree = "<group>"; };
+		5A260E9324FEF34500EA1BC8 /* CharactersServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersServiceMock.swift; sourceTree = "<group>"; };
 		5A4CE20724F6E39100B5045B /* RickAndMortyCharactersApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMortyCharactersApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A4CE20A24F6E39100B5045B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A4CE20C24F6E39100B5045B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,8 +78,42 @@
 			isa = PBXGroup;
 			children = (
 				5A260E8424FEB1AD00EA1BC8 /* CharactersListViewViewModel+Dummy.swift */,
+				5A260E9524FEF36C00EA1BC8 /* CharactersService */,
 			);
 			path = "Test dummies";
+			sourceTree = "<group>";
+		};
+		5A260E8E24FEF2E900EA1BC8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5A260E8F24FEF2F700EA1BC8 /* CellViewModel+Equatable.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5A260E9524FEF36C00EA1BC8 /* CharactersService */ = {
+			isa = PBXGroup;
+			children = (
+				5A260E9324FEF34500EA1BC8 /* CharactersServiceMock.swift */,
+				5A260E9124FEF32300EA1BC8 /* FakeCharactersService.swift */,
+			);
+			path = CharactersService;
+			sourceTree = "<group>";
+		};
+		5A260E9624FEF49C00EA1BC8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5A260E8C24FEF0EA00EA1BC8 /* RMCharacter.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5A260E9724FEF4AA00EA1BC8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5A260E8A24FEED0D00EA1BC8 /* CharactersService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		5A4CE1FE24F6E39100B5045B = {
@@ -97,9 +139,10 @@
 			children = (
 				5A4CE20A24F6E39100B5045B /* AppDelegate.swift */,
 				5A4CE20C24F6E39100B5045B /* SceneDelegate.swift */,
+				5A260E9624FEF49C00EA1BC8 /* Models */,
 				5A4CE22E24F6EDAE00B5045B /* CharactersListViewViewModel.swift */,
+				5A260E9724FEF4AA00EA1BC8 /* Services */,
 				5A4CE23024F6EDDA00B5045B /* CharactersListViewController.swift */,
-				5A260E8A24FEED0D00EA1BC8 /* CharactersService.swift */,
 				5A260E8624FEBD7900EA1BC8 /* UITableViewCell+SetByCellViewModel.swift */,
 				5A4CE21324F6E39500B5045B /* Assets.xcassets */,
 				5A4CE21524F6E39500B5045B /* LaunchScreen.storyboard */,
@@ -114,6 +157,7 @@
 				5A4CE22C24F6ECD700B5045B /* CharactersListViewControllerTests.swift */,
 				5A260E8824FEE8FA00EA1BC8 /* CharactersListViewViewModelTests.swift */,
 				5A260E8324FEB1A100EA1BC8 /* Test dummies */,
+				5A260E8E24FEF2E900EA1BC8 /* Extensions */,
 				5A4CE22624F6EC0D00B5045B /* Info.plist */,
 			);
 			path = RickAndMortyCharactersAppTests;
@@ -221,6 +265,7 @@
 			files = (
 				5A4CE23124F6EDDA00B5045B /* CharactersListViewController.swift in Sources */,
 				5A260E8B24FEED0D00EA1BC8 /* CharactersService.swift in Sources */,
+				5A260E8D24FEF0EA00EA1BC8 /* RMCharacter.swift in Sources */,
 				5A4CE22F24F6EDAE00B5045B /* CharactersListViewViewModel.swift in Sources */,
 				5A4CE20B24F6E39100B5045B /* AppDelegate.swift in Sources */,
 				5A260E8724FEBD7900EA1BC8 /* UITableViewCell+SetByCellViewModel.swift in Sources */,
@@ -232,9 +277,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A260E9224FEF32300EA1BC8 /* FakeCharactersService.swift in Sources */,
 				5A260E8524FEB1AD00EA1BC8 /* CharactersListViewViewModel+Dummy.swift in Sources */,
 				5A4CE22D24F6ECD700B5045B /* CharactersListViewControllerTests.swift in Sources */,
 				5A260E8924FEE8FA00EA1BC8 /* CharactersListViewViewModelTests.swift in Sources */,
+				5A260E9024FEF2F700EA1BC8 /* CellViewModel+Equatable.swift in Sources */,
+				5A260E9424FEF34500EA1BC8 /* CharactersServiceMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
