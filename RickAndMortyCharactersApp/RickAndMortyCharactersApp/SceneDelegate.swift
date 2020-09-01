@@ -57,7 +57,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 extension SceneDelegate {
     
     func rootViewController() -> UIViewController {
-        let viewModel = CharactersListViewViewModel(title: "Characters")
+        let service = CharactersServiceDummy()
+        let viewModel = CharactersListViewViewModel(title: "Characters", service: service)
         let viewController = CharactersListViewController(viewModel: viewModel)
         let output = UINavigationController(rootViewController: viewController)
         output.navigationBar.prefersLargeTitles = true

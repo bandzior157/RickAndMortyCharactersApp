@@ -11,7 +11,7 @@
 extension CharactersListViewViewModel {
     
     static var dummy: CharactersListViewViewModel {
-        CharactersListViewViewModel(title: "a")
+        CharactersListViewViewModel(title: "a", service: CharactersServiceDummy())
     }
     
 }

@@ -12,7 +12,7 @@ import XCTest
 class CharactersListViewControllerTests: XCTestCase {
     
     func test_title_didSetByViewModel_onLoad() {
-        let viewModel = CharactersListViewViewModel(title: "t")
+        let viewModel = makeViewModel("t")
         let sut = makeSUT(viewModel)
         sut.loadViewIfNeeded()
         XCTAssertEqual(sut.title, "t")
@@ -23,7 +23,7 @@ class CharactersListViewControllerTests: XCTestCase {
     }
     
     func test_fetchCharacters_onLoad() {
-        let viewModel = CharactersListViewViewModelSpy(title: "")
+        let viewModel = CharactersListViewViewModelSpy(title: "", service: CharactersServiceDummy())
         let sut = makeSUT(viewModel)
         
         XCTAssertEqual(viewModel.fetchCharactersCounter, 0)
@@ -33,14 +33,14 @@ class CharactersListViewControllerTests: XCTestCase {
     }
     
     func test_tableViewRowsCount_equalsViewModelCellViewModelsCount() {
-        let viewModel = CharactersListViewViewModel(title: "", cellViewModels: [CellViewModel(text: "a"), CellViewModel(text: "b")])
+        let viewModel = makeViewModel("", [CellViewModel(text: "a"), CellViewModel(text: "b")])
         let sut = makeSUT(viewModel)
         let rows = sut.tableView.numberOfRows(inSection: 0)
         XCTAssertEqual(rows, viewModel.cellViewModels.count)
     }
     
     func test_cellDisplayTextFromCellViewModel() {
-        let viewModel = CharactersListViewViewModel(title: "", cellViewModels: [CellViewModel(text: "a"), CellViewModel(text: "b")])
+        let viewModel = makeViewModel("", [CellViewModel(text: "a"), CellViewModel(text: "b")])
         let sut = makeSUT(viewModel)
         
         let cell = sut.tableView(sut.tableView, cellForRowAt: IndexPath(row: 0, section: 0))
@@ -57,6 +57,10 @@ class CharactersListViewControllerTests: XCTestCase {
     
     private func makeSUT(_ viewModel: CharactersListViewViewModel = CharactersListViewViewModel.dummy) -> CharactersListViewController {
         return CharactersListViewController(viewModel: viewModel)
+    }
+    
+    private func makeViewModel(_ title: String, _ cellViewModels: [CellViewModel] = [], _ service: CharactersService = CharactersServiceDummy()) -> CharactersListViewViewModel {
+        CharactersListViewViewModel(title: title, cellViewModels: cellViewModels, service: service)
     }
     
 }

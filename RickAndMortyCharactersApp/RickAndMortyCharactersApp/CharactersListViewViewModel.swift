@@ -10,14 +10,18 @@ class CharactersListViewViewModel {
     
     let title: String
     let cellViewModels: [CellViewModel]
+    let service: CharactersService
     
-    init(title: String, cellViewModels: [CellViewModel] = []) {
+    init(title: String, cellViewModels: [CellViewModel] = [], service: CharactersService) {
         self.title = title
         self.cellViewModels = cellViewModels
+        self.service = service
     }
     
     func fetchCharacters() {
-        
+        service.fetch { newCharacters in
+            
+        }
     }
     
 }
