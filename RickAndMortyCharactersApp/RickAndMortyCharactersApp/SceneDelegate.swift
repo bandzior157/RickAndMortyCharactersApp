@@ -58,6 +58,10 @@ extension SceneDelegate {
     
     func rootViewController() -> UIViewController {
         let viewModel = CharactersListViewViewModel(title: "Characters")
-        return CharactersListViewController(viewModel: viewModel)
+        let viewController = CharactersListViewController(viewModel: viewModel)
+        let output = UINavigationController(rootViewController: viewController)
+        output.navigationBar.prefersLargeTitles = true
+        return output
     }
+    
 }
