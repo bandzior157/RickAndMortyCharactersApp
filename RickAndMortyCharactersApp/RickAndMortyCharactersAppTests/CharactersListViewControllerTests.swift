@@ -52,6 +52,9 @@ class CharactersListViewControllerTests: XCTestCase {
         XCTAssertEqual(cell2.textLabel?.text, "b")
     }
     
+    
+    // MARK: - Helpers
+    
     private func makeSUT(_ viewModel: CharactersListViewViewModel = CharactersListViewViewModel.dummy) -> CharactersListViewController {
         return CharactersListViewController(viewModel: viewModel)
     }
