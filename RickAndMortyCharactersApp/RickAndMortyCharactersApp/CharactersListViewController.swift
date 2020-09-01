@@ -25,6 +25,7 @@ class CharactersListViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         title = viewModel.title
+        viewModel.fetchCharacters()
     }
     
 }

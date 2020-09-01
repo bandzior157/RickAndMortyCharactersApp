@@ -14,4 +14,8 @@ class CharactersListViewViewModel {
         self.title = title
     }
     
+    func fetchCharacters() {
+        
+    }
+    
 }

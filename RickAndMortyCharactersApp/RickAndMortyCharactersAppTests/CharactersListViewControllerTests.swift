@@ -11,9 +11,10 @@ import XCTest
 
 class CharactersListViewControllerTests: XCTestCase {
     
-    func test_title_didSetByViewModel() {
+    func test_title_didSetByViewModel_onLoad() {
         let viewModel = CharactersListViewViewModel(title: "t")
         let sut = makeSUT(viewModel)
+        sut.loadViewIfNeeded()
         XCTAssertEqual(sut.title, "t")
     }
     
@@ -21,10 +22,28 @@ class CharactersListViewControllerTests: XCTestCase {
         XCTAssertEqual(makeSUT().view.backgroundColor, .systemBackground)
     }
     
-    private func makeSUT(_ viewModel: CharactersListViewViewModel = CharactersListViewViewModel.dummy) -> CharactersListViewController {
-        let sut = CharactersListViewController(viewModel: viewModel)
+    func test_fetchCharacters_onLoad() {
+        let viewModel = CharactersListViewViewModelSpy(title: "")
+        let sut = makeSUT(viewModel)
+        
+        XCTAssertEqual(viewModel.fetchCharactersCounter, 0)
+        
         sut.loadViewIfNeeded()
-        return sut
+        XCTAssertEqual(viewModel.fetchCharactersCounter, 1)
+    }
+    
+    private func makeSUT(_ viewModel: CharactersListViewViewModel = CharactersListViewViewModel.dummy) -> CharactersListViewController {
+        return CharactersListViewController(viewModel: viewModel)
+    }
+    
+}
+
+class CharactersListViewViewModelSpy: CharactersListViewViewModel {
+    
+    private(set) var fetchCharactersCounter = 0
+    
+    override func fetchCharacters() {
+        fetchCharactersCounter += 1
     }
     
 }
