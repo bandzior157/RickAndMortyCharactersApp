@@ -32,6 +32,13 @@ class CharactersListViewControllerTests: XCTestCase {
         XCTAssertEqual(viewModel.fetchCharactersCounter, 1)
     }
     
+    func test_tableViewRowsCount_equalsViewModelCellViewModelsCount() {
+        let viewModel = CharactersListViewViewModel(title: "", cellViewModels: [1, 2])
+        let sut = makeSUT(viewModel)
+        let rows = sut.tableView.numberOfRows(inSection: 0)
+        XCTAssertEqual(rows, viewModel.cellViewModels.count)
+    }
+    
     private func makeSUT(_ viewModel: CharactersListViewViewModel = CharactersListViewViewModel.dummy) -> CharactersListViewController {
         return CharactersListViewController(viewModel: viewModel)
     }

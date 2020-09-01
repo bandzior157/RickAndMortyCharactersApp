@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CharactersListViewController: UIViewController {
+class CharactersListViewController: UITableViewController {
     
     private let viewModel: CharactersListViewViewModel
     
@@ -26,6 +26,14 @@ class CharactersListViewController: UIViewController {
         view.backgroundColor = .systemBackground
         title = viewModel.title
         viewModel.fetchCharacters()
+    }
+ 
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        viewModel.cellViewModels.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        UITableViewCell()
     }
     
 }
