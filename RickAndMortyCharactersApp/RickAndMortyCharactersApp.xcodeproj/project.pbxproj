@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5A260E8524FEB1AD00EA1BC8 /* CharactersListViewViewModel+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A260E8424FEB1AD00EA1BC8 /* CharactersListViewViewModel+Dummy.swift */; };
+		5A260E8724FEBD7900EA1BC8 /* UITableViewCell+SetByCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A260E8624FEBD7900EA1BC8 /* UITableViewCell+SetByCellViewModel.swift */; };
 		5A4CE20B24F6E39100B5045B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CE20A24F6E39100B5045B /* AppDelegate.swift */; };
 		5A4CE20D24F6E39100B5045B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CE20C24F6E39100B5045B /* SceneDelegate.swift */; };
 		5A4CE21424F6E39500B5045B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A4CE21324F6E39500B5045B /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		5A260E8424FEB1AD00EA1BC8 /* CharactersListViewViewModel+Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharactersListViewViewModel+Dummy.swift"; sourceTree = "<group>"; };
+		5A260E8624FEBD7900EA1BC8 /* UITableViewCell+SetByCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+SetByCellViewModel.swift"; sourceTree = "<group>"; };
 		5A4CE20724F6E39100B5045B /* RickAndMortyCharactersApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMortyCharactersApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A4CE20A24F6E39100B5045B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A4CE20C24F6E39100B5045B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				5A4CE20C24F6E39100B5045B /* SceneDelegate.swift */,
 				5A4CE22E24F6EDAE00B5045B /* CharactersListViewViewModel.swift */,
 				5A4CE23024F6EDDA00B5045B /* CharactersListViewController.swift */,
+				5A260E8624FEBD7900EA1BC8 /* UITableViewCell+SetByCellViewModel.swift */,
 				5A4CE21324F6E39500B5045B /* Assets.xcassets */,
 				5A4CE21524F6E39500B5045B /* LaunchScreen.storyboard */,
 				5A4CE21824F6E39500B5045B /* Info.plist */,
@@ -213,6 +216,7 @@
 				5A4CE23124F6EDDA00B5045B /* CharactersListViewController.swift in Sources */,
 				5A4CE22F24F6EDAE00B5045B /* CharactersListViewViewModel.swift in Sources */,
 				5A4CE20B24F6E39100B5045B /* AppDelegate.swift in Sources */,
+				5A260E8724FEBD7900EA1BC8 /* UITableViewCell+SetByCellViewModel.swift in Sources */,
 				5A4CE20D24F6E39100B5045B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

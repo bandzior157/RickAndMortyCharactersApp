@@ -33,10 +33,23 @@ class CharactersListViewControllerTests: XCTestCase {
     }
     
     func test_tableViewRowsCount_equalsViewModelCellViewModelsCount() {
-        let viewModel = CharactersListViewViewModel(title: "", cellViewModels: [1, 2])
+        let viewModel = CharactersListViewViewModel(title: "", cellViewModels: [CellViewModel(text: "a"), CellViewModel(text: "b")])
         let sut = makeSUT(viewModel)
         let rows = sut.tableView.numberOfRows(inSection: 0)
         XCTAssertEqual(rows, viewModel.cellViewModels.count)
+    }
+    
+    func test_cellDisplayTextFromCellViewModel() {
+        let viewModel = CharactersListViewViewModel(title: "", cellViewModels: [CellViewModel(text: "a"), CellViewModel(text: "b")])
+        let sut = makeSUT(viewModel)
+        
+        let cell = sut.tableView(sut.tableView, cellForRowAt: IndexPath(row: 0, section: 0))
+        XCTAssertNotNil(cell)
+        XCTAssertEqual(cell.textLabel?.text, "a")
+        
+        let cell2 = sut.tableView(sut.tableView, cellForRowAt: IndexPath(row: 1, section: 0))
+        XCTAssertNotNil(cell2)
+        XCTAssertEqual(cell2.textLabel?.text, "b")
     }
     
     private func makeSUT(_ viewModel: CharactersListViewViewModel = CharactersListViewViewModel.dummy) -> CharactersListViewController {

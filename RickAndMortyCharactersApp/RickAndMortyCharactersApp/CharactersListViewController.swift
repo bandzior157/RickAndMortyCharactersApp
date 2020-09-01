@@ -33,7 +33,9 @@ class CharactersListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        UITableViewCell()
+        let cell = UITableViewCell()
+        cell.set(by: viewModel.cellViewModels[indexPath.row])
+        return cell
     }
     
 }

@@ -9,9 +9,9 @@
 class CharactersListViewViewModel {
     
     let title: String
-    let cellViewModels: [Int]
+    let cellViewModels: [CellViewModel]
     
-    init(title: String, cellViewModels: [Int] = []) {
+    init(title: String, cellViewModels: [CellViewModel] = []) {
         self.title = title
         self.cellViewModels = cellViewModels
     }
@@ -19,5 +19,11 @@ class CharactersListViewViewModel {
     func fetchCharacters() {
         
     }
+    
+}
+
+struct CellViewModel {
+    
+    let text: String?
     
 }
