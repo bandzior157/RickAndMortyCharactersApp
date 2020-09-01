@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A260E8524FEB1AD00EA1BC8 /* CharactersListViewViewModel+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A260E8424FEB1AD00EA1BC8 /* CharactersListViewViewModel+Dummy.swift */; };
 		5A4CE20B24F6E39100B5045B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CE20A24F6E39100B5045B /* AppDelegate.swift */; };
 		5A4CE20D24F6E39100B5045B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CE20C24F6E39100B5045B /* SceneDelegate.swift */; };
 		5A4CE21424F6E39500B5045B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A4CE21324F6E39500B5045B /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A260E8424FEB1AD00EA1BC8 /* CharactersListViewViewModel+Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharactersListViewViewModel+Dummy.swift"; sourceTree = "<group>"; };
 		5A4CE20724F6E39100B5045B /* RickAndMortyCharactersApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMortyCharactersApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A4CE20A24F6E39100B5045B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A4CE20C24F6E39100B5045B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +60,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A260E8324FEB1A100EA1BC8 /* Test dummies */ = {
+			isa = PBXGroup;
+			children = (
+				5A260E8424FEB1AD00EA1BC8 /* CharactersListViewViewModel+Dummy.swift */,
+			);
+			path = "Test dummies";
+			sourceTree = "<group>";
+		};
 		5A4CE1FE24F6E39100B5045B = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				5A4CE22C24F6ECD700B5045B /* CharactersListViewControllerTests.swift */,
+				5A260E8324FEB1A100EA1BC8 /* Test dummies */,
 				5A4CE22624F6EC0D00B5045B /* Info.plist */,
 			);
 			path = RickAndMortyCharactersAppTests;
@@ -210,6 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A260E8524FEB1AD00EA1BC8 /* CharactersListViewViewModel+Dummy.swift in Sources */,
 				5A4CE22D24F6ECD700B5045B /* CharactersListViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -28,9 +28,3 @@ class CharactersListViewControllerTests: XCTestCase {
     }
     
 }
-
-extension CharactersListViewViewModel {
-    static var dummy: CharactersListViewViewModel {
-        CharactersListViewViewModel(title: "a")
-    }
-}
